@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="js/jquery-3.1.1.js" charset="utf-8"></script>
+  <script src="js/scripts.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <title>Furby Adoption</title>
+</head>
+<body>
+  <div class="jumbotron">
+    <h1>Adopt a Furby!</h1>
+    <h2>Every Furby Deserves a Home</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="add-a-furby-box">
+          <form id="add-a-furby-form">
+            <div class="form-group">
+              <label for="furby-name">Name</label>
+              <input type="text" id="furby-name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="furby-age">Age</label>
+              <input type="number" id="furby-age" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="furby-color">Color</label>
+              <input type="text" id="furby-color" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="furby-pic">Image URL</label>
+              <input type="url" id="furby-pic" class="form-control">
+            </div>
+            <button type="submit" id="form-submit">Add a Furby!</button>
+          </form>
+        </div>
+        <div id="buttons">
+          <button type="button" id="show-adopted">See Adopted Furbies!</button>
+          <button type="button" id="show-available">See Available Furbies!</button>
+          <button type="button" id="show-all">See All Furbies!</button>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="furby-box">
+          <img src="http://mms.businesswire.com/media/20160630005817/en/532912/4/Furby_Connect_from_Hasbro%2C_Inc._%28Teal%29.jpg?download=1" alt="Bubbles the Furby" />
+          <h2>Bubbles</h2>
+          <span class="age">2 Years Old</span>
+          <span class="color">Teal</span>
+        </div>
+        <div class="furby-box">
+          <img src="http://www.hasbro.com/common/productimages/en_US/bc76fde750569047f599df72a98b6fcb/5119C49650569047F576452CDBFAE35C.jpg" alt="Furbacca the Furby" />
+          <h2>Furbacca</h2>
+          <span class="age">40 Years Old</span>
+          <span class="color">Burnt Orange</span>
+        </div>
+        <div class="furby-box">
+          <img src="http://crystalboomtoy.com/wp-content/uploads/2014/10/Pink-Blue-Crystal-Edition-Furby-Boom.jpg" alt="Sparkles the Furby" />
+          <h2>Sparkles</h2>
+          <span class="age">7 Years Old</span>
+          <span class="color">Rainbow and Sparkly!</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
