@@ -1,5 +1,14 @@
 .jumbotron {
   text-align: center;
+  background-image: url(http://www.hasbro.com/images/brandpages/furby/phygitalback.jpg);
+}
+
+.jumbotron h1 {
+  font-family: 'Luckiest Guy', cursive;
+  color: white;
+  text-outline:;
+  font-size: 100px;
+  margin-bottom: 0px;
 }
 
 .container {
