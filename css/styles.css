@@ -19,7 +19,7 @@ button {
 
 .furby-box {
   width: 30%;
-  height: 350px;
+  height: 400px;
   border: 3px solid red;
   float: left;
   margin: 1.5% 1.5%;
@@ -33,6 +33,16 @@ button {
 
 .furby-box h2 {
   text-align: center;
+}
+
+.furby-box button {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  bottom: 10px;
 }
 
 .age, .color {

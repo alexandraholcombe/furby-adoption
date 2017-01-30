@@ -1,7 +1,8 @@
-function Furby(name, age, color) {
+function Furby(name, age, color, url) {
   this.furbyName = name;
   this.age = age;
   this.furbyColor = color;
+  this.furbyPic = url;
   this.adoptionStatus = false;
 }
 var furby1 = new Furby("Lola", 3, "gray, white");
@@ -9,33 +10,34 @@ var furby1 = new Furby("Lola", 3, "gray, white");
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    var inputName = $("input#name").val();
-    var inputAge = $("input#age").val();
-    var inputColor = $("input#color").val();
+    var inputName = $("input#furby-name-input").val();
+    var inputAge = $("input#furby-age-input").val();
+    var inputColor = $("input#furby-color-input").val();
+    var inputPic = $("input#furby-pic-input").val();
 
-    var newFurby = new Furby(inputName, inputAge, inputColor);
+    var newFurby = new Furby(inputName, inputAge, inputColor, inputPic);
 
-    $("span#furbyName").append(newFurby.furbyName, newFurby.age, newFurby.furbyColor, newFurby.adoptionStatus);
+    $("span#furbyName").append(newFurby.furbyName, newFurby.age, newFurby.furbyColor, newFurby.furbyPic, newFurby.adoptionStatus);
   });
 
-  $("button.adopt").click(function() {
+  $("button.adopt-me").click(function() {
     $(this).parent().addClass("adopted");
-    $(this).parent().removeClass("notAdopted");
+    $(this).parent().removeClass("available");
   })
 
-  $("button.showAdopted").click(function() {
+  $("#show-adopted").click(function() {
     $(".adopted").show();
-    $(".notAdopted").hide();
+    $(".available").hide();
   })
 
-  $("button.showNotAdopted").click(function() {
+  $("#show-available").click(function() {
     $(".adopted").hide();
-    $(".notAdopted").show();
+    $(".available").show();
   })
 
-  $("button.all").click(function() {
+  $("#show-all").click(function() {
     $(".adopted").show();
-    $(".notAdopted").show();
+    $(".available").show();
   })
 
 });
