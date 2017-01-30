@@ -8,21 +8,13 @@ function Furby(name, age, color, url) {
 var furby1 = new Furby("Lola", 3, "gray, white");
 
 $(document).ready(function() {
-  $("form").submit(function(event) {
-    event.preventDefault();
-    var inputName = $("input#furby-name-input").val();
-    var inputAge = $("input#furby-age-input").val();
-    var inputColor = $("input#furby-color-input").val();
-    var inputPic = $("input#furby-pic-input").val();
 
-    var newFurby = new Furby(inputName, inputAge, inputColor, inputPic);
-
-    $("span#furbyName").append(newFurby.furbyName, newFurby.age, newFurby.furbyColor, newFurby.furbyPic, newFurby.adoptionStatus);
-  });
-
-  $("button.adopt-me").click(function() {
+  $("div.container").on('click', '.furby-box button.adopt-me', function(event) {
     $(this).parent().addClass("adopted");
+    $(this).parent().find(".overlay").show();
     $(this).parent().removeClass("available");
+    $(this).parent().append("I'm adopted!");
+    console.log("I'm adopted!");
   })
 
   $("#show-adopted").click(function() {
@@ -39,5 +31,28 @@ $(document).ready(function() {
     $(".adopted").show();
     $(".available").show();
   })
+
+  $("form").submit(function(event) {
+    event.preventDefault();
+    var inputName = $("input#furby-name-input").val();
+    var inputAge = $("input#furby-age-input").val();
+    var inputColor = $("input#furby-color-input").val();
+    var inputPic = $("input#furby-pic-input").val();
+
+    var newFurby = new Furby(inputName, inputAge, inputColor, inputPic);
+    console.log(newFurby);
+
+
+    $(".col-md-9").append('<div class="furby-box available">'+
+    '<div class="overlay">' +
+    '</div>' +
+    '<img src="' + inputPic + '" alt="Bubbles the Furby" />' +
+      '<h2>' + inputName + '</h2>' +
+      '<span class="age">' + inputAge + '</span>' +
+      '<span class="color">' + inputColor + '</span>' +
+      '<button type="button" class="adopt-me btn btn-danger btn-lg">Adopt me!</button>' +
+    '</div>');
+  });
+
 
 });
